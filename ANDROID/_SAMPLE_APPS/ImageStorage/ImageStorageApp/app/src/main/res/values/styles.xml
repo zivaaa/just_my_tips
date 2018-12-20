@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimaryLight</item>
+        <item name="buttonStyle">@style/App.Button</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+
+        <item name="autoCompleteTextViewStyle">@style/App.AutoCompleteTextView</item>
+        <item name="android:colorBackground">@color/colorPrimaryLight</item>
+        <item name="android:colorForeground">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="android:textColorPrimaryInverse">@color/colorPrimaryLight</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:statusBarColor">?android:attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CircleImageBtn">
+        <item name="android:background">@drawable/circle</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+    <style name="App.Button" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="App.AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="backgroundTint">@color/colorAccent</item>
+    </style>
+
+</resources>

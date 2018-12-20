@@ -1,0 +1,133 @@
+{
+  "name": "Image",
+  "http.path" : "image",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "userId": {
+      "type": "string"
+    },
+    "accessType": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "mixins": {
+    "DisableMethods": {
+      "expose": [
+        "getUserImages",
+        "getSourceImage",
+        "uploadImage",
+        "deleteImage"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getSourceImage"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "getUserImages": {
+      "accepts": [
+        { "arg": "req", "type": "object", "http": { "source": "req" } },
+        { "arg": "res", "type": "object", "http": { "source": "res" } }
+      ],
+      "returns": [
+        {
+          "arg": "images",
+          "type": "object",
+          "root": true,
+          "description": "all image belongs to user"
+        }
+      ],
+      "description": "get all user images",
+      "http": [
+        {
+          "path": "/my",
+          "verb": "get"
+        }
+      ]
+    },
+    "getSourceImage": {
+      "accepts": [
+        { "arg": "req", "type": "object", "http": { "source": "req" } },
+        { "arg": "res", "type": "object", "http": { "source": "res" } },
+        { "arg": "id", "type": "string", "required": true }
+      ],
+      "returns": [
+        {
+          "type": "object",
+          "root": true,
+          "description": "image source"
+        }
+      ],
+      "description": "get image by request",
+      "http": [
+        {
+          "path": "/source/:id",
+          "verb": "get"
+        }
+      ]
+    },
+    "uploadImage": {
+      "description": "Uploads image (multipart/form-data)",
+      "accepts": [
+        {"arg": "req", "type": "object", "http": {"source": "req"}},
+        {"arg": "res", "type": "object", "http": {"source": "res"}},
+        {"arg": "userfile", "type": "file"}
+      ],
+      "returns": {
+        "arg": "image",
+        "type": "object",
+        "root": true,
+        "description": "all image belongs to user"
+      },
+      "http": {"path": "/upload","verb": "post"}
+    },
+    "deleteImage": {
+      "description": "delete image by id",
+      "accepts": [
+        {"arg": "req", "type": "object", "http": {"source": "req"}},
+        {"arg": "res", "type": "object", "http": {"source": "res"}},
+        {"arg": "id", "type": "string", "required": true }
+      ],
+      "returns": {
+        "arg": "response",
+        "type": "object",
+        "description": "succeeded or not"
+      },
+      "http": {"path": "/:id","verb": "delete"}
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form" enctype="multipart/form-data" action="/api/images/upload" method="POST">
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <br/>
+  Отправить этот файл: <input name="userfile" type="file" />
+  <br/>
+  <input type="submit" value="Отправить файл" />
+</form>
+<script>
+  function q(token) {
+    var form = document.getElementById("form")
+    form.action += "?access_token=" + token
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('access_token');
+  q(token)
+</script>
+</body>
+</html>

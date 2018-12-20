@@ -1,0 +1,23 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "base_db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "img_db",
+    "password": "",
+    "name": "base_db",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "filesystem": {
+    "name": "filesystem",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/public",
+    "maxFileSize": "10485760"
+  }
+}
