@@ -8,7 +8,7 @@
 
     private fun doesPermissionGiven(): Boolean {
         return ContextCompat.checkSelfPermission(
-            view.getAppContext(),
+            this,
             Manifest.permission.READ_EXTERNAL_STORAGE
         ) == PackageManager.PERMISSION_GRANTED
     }
@@ -24,13 +24,13 @@
 
     private fun tryRequestExternalFileAccessPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(
-                this.view as Activity,
+                this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
         ) {
 
             Snackbar.make(findViewById(R.id.content), "Please give me permission!", Snackbar.LENGTH_LONG).also {
-                    it.setAction("Allow"", {
+                    it.setAction("Allow", {
                         requestWritePermissions()
                     })
                 it.show()
@@ -47,7 +47,7 @@
 ```
     private fun requestWritePermissions() {
         if (android.os.Build.VERSION.SDK_INT > 22) {
-            (view as Activity).requestPermissions(
+            this.requestPermissions(
                 arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
                 WRITE_PERMISSION_CODE
             )
