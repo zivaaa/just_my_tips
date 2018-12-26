@@ -242,4 +242,4 @@ class LocationDetector(
 
 ### Screenshots
 
-![screen_1](https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/GeoLocationGoogleMap/screenshots/scr1.png =300x)
+<img src="https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/GeoLocationGoogleMap/screenshots/scr1.png" width="25%">
