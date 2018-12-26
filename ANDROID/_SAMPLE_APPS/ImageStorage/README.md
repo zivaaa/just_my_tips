@@ -52,10 +52,7 @@ node server/server.js
 
 ### Screenshots
 
-![screen_1](https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_1.png =300x) 
-
-![screen_2](https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_2.png =300x) 
-
-![screen_3](https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_3.png =300x) 
-
-![screen_4](https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_4.png =300x) 
+<img src="https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_1.png" width="25%">
+<img src="https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_2.png" width="25%">
+<img src="https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_3.png" width="25%">
+<img src="https://github.com/zivaaa/just_my_tips/blob/master/ANDROID/_SAMPLE_APPS/ImageStorage/screenshots/screen_4.png" width="25%">
