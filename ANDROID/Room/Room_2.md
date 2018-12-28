@@ -67,10 +67,9 @@ repo.getArticlesByPageLive(currentPage?.id!!).observe(this, Observer {
 //...
 
 ```
+<img src="https://github.com/zivaaa/just_my_tips/src/master/ANDROID/Room/screenshots/scr1.png" width="25%">
 
-![IMAGE #1] (https://bitbucket.org/zivaaa/just_my_tips/src/master/ANDROID/Room/screenshots/scr1.png)
-
-![IMAGE #2] (https://bitbucket.org/zivaaa/just_my_tips/src/master/ANDROID/Room/screenshots/scr2.png)
+<img src="https://github.com/zivaaa/just_my_tips/src/master/ANDROID/Room/screenshots/scr2.png" width="25%">
 
 
 ### Через Relation

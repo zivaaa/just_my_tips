@@ -32,7 +32,7 @@ class LocationDetector(
         val LOCATION_PERMISSION_CODE = 7771
     }
 
-    private val TWO_MINUTES: Long = 1000 * 60 * 2
+    private val BETTER_INTERVAL: Long = 1000 * 10
 
     /**
      * Interface of listener
@@ -185,8 +185,8 @@ class LocationDetector(
 
         // Check whether the new location fix is newer or older
         val timeDelta: Long = location.time - currentBestLocation.time
-        val isSignificantlyNewer: Boolean = timeDelta > TWO_MINUTES
-        val isSignificantlyOlder: Boolean = timeDelta < -TWO_MINUTES
+        val isSignificantlyNewer: Boolean = timeDelta > BETTER_INTERVAL
+        val isSignificantlyOlder: Boolean = timeDelta < -BETTER_INTERVAL
 
         when {
             // If it's been more than two minutes since the current location, use the new location
