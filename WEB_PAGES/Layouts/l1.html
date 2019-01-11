@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .content > div {
+    position: relative;
+  }
+
+  .content > div:nth-child(1) {
+    background: blue;
+  }
+
+  .content > div:nth-child(2) {
+    background: green;
+    flex: 1;
+  }
+
+  .content > div:nth-child(3) {
+    background: red;
+  }
+
+  .ct {
+    padding: 5px;
+    background: #eeabab;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+
+  .ct p:nth-child(odd) {
+    background: #d3d3d3;
+  }
+
+</style>
+<body>
+  <div class="content">
+    <div class="head">
+      <p>HEAD</p>
+    </div>
+    <div class="body">
+      <div class="ct">
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+        <p>Lorem ipsum</p>
+      </div>
+    </div>
+    <div class="foot">
+      <p>FOOTER</p>
+    </div>
+  </div>
+</body>
+</html>
