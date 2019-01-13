@@ -1,0 +1,51 @@
+@import "../../styles/Theme";
+
+.chat_message {
+
+  @ColorBgMy: #eeabab;
+  @ColorBg: #d3c1ee;
+  overflow: auto;
+  margin: 10px 0;
+
+  .message_wrapper {
+    padding: 10px;
+    float: right;
+    background: @ColorBg;
+    border-radius: @BorderRadiusSm;
+    max-width: 75%;
+    min-width: 25%;
+    position: relative;
+
+    .author {
+      font-weight: 600;
+      color: #7d61a3;
+    }
+
+    .text {
+      padding: 2px 0;
+
+      p {
+        margin: 0;
+        white-space: pre-line
+      }
+
+      .time {
+        margin: 5px 0 0 0;
+        font-size: 9px;
+        color: #9f89b3;
+        text-align: right;
+      }
+    }
+  }
+
+
+  &.my {
+    .message_wrapper {
+      background: @ColorBgMy;
+      float: left;
+      border-radius: @BorderRadiusSm;
+    }
+  }
+
+
+}

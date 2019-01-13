@@ -1,0 +1,33 @@
+@import "../styles/Theme";
+
+.chat {
+  padding: 15px;
+  .chat_wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    //background: red;
+    .chat_list_wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+      border-radius: @BorderRadiusSm;
+      border: 1px solid @ColorBackgroundDarker;
+      overflow: auto;
+    }
+    .chat_list_content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

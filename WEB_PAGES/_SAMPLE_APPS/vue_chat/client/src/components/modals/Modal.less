@@ -1,0 +1,58 @@
+@import "../../styles/Theme";
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  //visibility: hidden;
+
+  &.show {
+    //visibility: visible;
+  }
+
+  .modal-content {
+    background: white;
+    position: relative;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    max-height: 75%;
+    border-radius: 8px;
+    color: @ColorTextDefault;
+  }
+
+  .modal-header {
+    min-height: 40px;
+    border-bottom: 1px @ColorBackgroundDarker solid;
+    padding: 5px 20px;
+  }
+
+  .modal-footer {
+    min-height: 40px;
+    border-top: 1px @ColorBackgroundDarker solid;
+    padding: 5px 20px;
+  }
+
+  .modal-body {
+    padding: 5px 20px;
+  }
+
+  .modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,30 @@
+@import "Theme";
+@import "controls/Button";
+@import "Forms";
+
+html {
+  height: 100%;
+  font-size: @FontSizeDefault;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  color: @ColorTextDefault;
+}
+
+#app {
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+  }
+}
+
+

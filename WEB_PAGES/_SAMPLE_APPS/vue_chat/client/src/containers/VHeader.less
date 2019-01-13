@@ -1,0 +1,31 @@
+@import "../styles/Theme";
+
+header {
+  position: relative;
+  background: @ColorSecondary;
+  padding: 2px @OffsetSideMd;
+  //flex-direction: row;
+  z-index: 1;
+
+  .head_wrap {
+    display: flex;
+    flex-direction: row;
+
+    .logo-wrap {
+      padding: 0 @OffsetSideMd 0 0;
+      color: @ColorAccent;
+    }
+
+    .header-content {
+      color: @ColorAccent;
+      flex: 1;
+      & > div {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+      }
+    }
+  }
+
+
+}
