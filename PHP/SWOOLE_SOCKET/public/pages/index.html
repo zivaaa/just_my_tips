@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/knockout-3.5.0.js"></script>
+    <style>
+        .message {
+            background: #f5aaa6;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .message-box {
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Sample chat</h1>
+<hr/>
+<div class="message-box">
+    <div data-bind="foreach: messages">
+        <div class="message">
+            <b><span data-bind="text: sender"></span></b>:
+            <span data-bind="text: message"></span>
+        </div>
+    </div>
+    <div data-bind="if: ready">
+        <hr/>
+        <input type="text" placeholder="Enter message" data-bind="value: currentMessage"/>
+        <button type="button" data-bind="click: send">Submit</button>
+    </div>
+</div>
+<script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    var ViewModel = function () {
+        this.messages = ko.observableArray([]);
+        this.currentMessage = ko.observable("");
+        this.ready = ko.observable(false);
+        this.userId = ko.observable("user_" + getRandomInt(100000));
+        var self = this;
+
+        this.send = function () {
+            var message = self.currentMessage();
+            self.currentMessage("");
+            self.socket.send(JSON.stringify({
+                action: "message", data: {
+                    message: message,
+                    sender: self.userId()
+                }
+            }))
+        };
+
+        var socket = new WebSocket("ws://127.0.0.1:8081");
+        this.socket = socket;
+
+        socket.onopen = function () {
+            console.log("ready");
+            self.ready(true)
+        };
+
+        socket.onclose = function (event) {
+            if (event.wasClean) {
+                console.warn("connection cleared");
+            } else {
+                console.error("connection refused");
+            }
+            console.error('Код: ' + event.code + ' причина: ' + event.reason);
+        };
+
+        socket.onmessage = function (event) {
+            console.log("Получены данные " + event.data);
+            var data = JSON.parse(event.data);
+            self.messages.push(data.data);
+        };
+
+        socket.onerror = function (error) {
+            console.error("error");
+            console.error(error);
+        };
+
+        // setInterval(()=>{
+        //     self.messages.push({message: "test", sender: "lol1"})
+        // }, 1500)
+    }
+
+    ko.applyBindings(new ViewModel());
+</script>
+</body>
+</html>
